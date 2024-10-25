@@ -1,12 +1,12 @@
-import Image from "next/image";
 import { getImages } from "@/utils/cloudinary";
 import { Home as HomeIcon } from "lucide-react";
+import { ImageGallery } from "../components/ImageGallery";
 
 async function Home() {
   const images = await getImages();
 
   return (
-    <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 min-h-screen gap-4 py-24 px-12">
+    <main id="pswp-gallery" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 min-h-screen gap-4 py-24 px-12">
       <div className="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4 flex justify-between items-start">
         <div>
           <p className="text-2xl font-bold tracking-wide">film photos (unedited)</p>
@@ -33,21 +33,7 @@ async function Home() {
           <HomeIcon className="w-5 h-5" />
         </a>
       </div>
-      {images.map(({ id, src, title, alt, blurDataURL }) => {
-        return (
-          <Image
-            key={id}
-            width={720}
-            height={480}
-            src={src}
-            alt={alt}
-            title={title}
-            placeholder="blur"
-            blurDataURL={blurDataURL}
-            className="w-full brightness-90 hover:brightness-110 hover:cursor-zoom-in"
-          />
-        )
-      })}
+      <ImageGallery images={images} galleryID="pswp-gallery" />
     </main>
   );
 };

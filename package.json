@@ -14,6 +14,7 @@
     "cloudinary": "^2.1.0",
     "lucide-react": "^0.368.0",
     "next": "14.1.4",
+    "photoswipe": "^5.4.4",
     "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-dom": "^18"

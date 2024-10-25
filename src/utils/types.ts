@@ -4,6 +4,7 @@ export type ImageProps = {
   height: string;
   width: string;
   src: string;
+  srcLarge: string;
   format: string;
   blurDataURL?: string;
   title: string;

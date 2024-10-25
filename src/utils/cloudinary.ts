@@ -29,6 +29,7 @@ export const getImages = async () => {
       height: resource.height,
       width: resource.width,
       src: `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${resource.public_id}`,
+      srcLarge: `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_1440/${resource.public_id}`,
       format: resource.format,
       title: resource.context.alt ?? "",
       alt: resource.context.caption ?? "",
